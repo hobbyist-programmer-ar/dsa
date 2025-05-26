@@ -1,5 +1,6 @@
 package org.hobbiesofar.arrays;
 
+import java.util.Arrays;
 
 class CountIncreasingQuadruplets {
     public long countQuadruplets(int[] nums) {
@@ -43,27 +44,24 @@ class CountIncreasingQuadruplets {
         }
         return quadCount;
     }
-}
 
 
-/*
-public long countQuadruplets(int[] nums) {
+    public long countQuadrupletsDP(int[] nums) {
         int n = nums.length;
-        long[] cnt = new long[n];
+        long[] dp = new long[n];
+        Arrays.fill(dp, 0);
         long ans = 0;
-        for (int j = 0; j < n; j++) {
-            int prev_small = 0;
-            for (int i = 0; i < j; i++) {
-                if (nums[j] > nums[i]) {
-                    prev_small++;
-                    ans += cnt[i];
-                } else if (nums[j] < nums[i]) {
-                    cnt[i] += prev_small;
+        for(int i = 1; i < n; i++) {
+            int choice = 0;
+            for(int j = 0; j < i; j++) {
+                if(nums[i] > nums[j]) {
+                    choice++;
+                    ans += dp[j];
+                } else if(nums[i] < nums[j]) {
+                    dp[j] += choice;
                 }
             }
         }
         return ans;
     }
-
-
-*/
+}
