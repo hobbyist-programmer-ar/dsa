@@ -1,5 +1,7 @@
 package org.hobbiesofar.binarysearch;
 
+import java.util.List;
+
 class Solution {
     public static int binarySearch(List<Integer> arr, int target) {
         // WRITE YOUR BRILLIANT CODE HERE
