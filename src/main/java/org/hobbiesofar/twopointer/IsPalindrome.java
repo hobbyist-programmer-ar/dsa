@@ -7,15 +7,15 @@ class IsPalindrome {
         int right = s.length() - 1;
         char[] sChar = s.toCharArray();
         while(left <= right) {
-            while (l < r && !Character.isLetterOrDigit(arr[l])) {
-                l++;
+            while (left < right && !Character.isLetterOrDigit(sChar[left])) {
+                left++;
             }
-            while (l < r && !Character.isLetterOrDigit(arr[r])) {
-                r--;
+            while (left < right && !Character.isLetterOrDigit(sChar[right])) {
+                right--;
             }
-            if (Character.toLowerCase(arr[l]) != Character.toLowerCase(arr[r])) return false;
-            l++;
-            r--;
+            if (Character.toLowerCase(sChar[left]) != Character.toLowerCase(sChar[right])) return false;
+            left++;
+            right--;
         }
         return true;
     }
