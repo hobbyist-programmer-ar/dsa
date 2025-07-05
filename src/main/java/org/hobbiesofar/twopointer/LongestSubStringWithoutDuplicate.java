@@ -13,7 +13,7 @@ class LongestSubStringWithoutDuplicate {
                 window.put(s.charAt(left), window.get(s.charAt(left)) - 1);
                 left++;
             }
-            longest = Math.max(longest, right - left + 1)
+            longest = Math.max(longest, right - left + 1);
         }
         return longest;
     }
